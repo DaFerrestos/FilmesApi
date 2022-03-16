@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "zmiyjGA/cd3zM26557G8RePH43uibNwxQ/K9VweBjJzTd3EAAyToiBBlXKIlJn7in62/jbxaHU3gPsaV6ZyEjQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rofer\\source\\repos\\FilmesApi\\FilmesApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rofer\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.23\\microsoft.netcore.app.host.win-x64.3.1.23.nupkg.sha512"
+  ],
+  "logs": []
+}
