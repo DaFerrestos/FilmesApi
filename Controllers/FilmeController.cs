@@ -23,7 +23,7 @@ namespace FilmesApi.Controllers
 
             _context.Filmes.Add(filme);
             _context.SaveChanges();
-            return CreatedAtAction(nameof(RecuperaFilmePorId), new { Id = filme.Id}, filme);//indica local(location) de criação
+            return CreatedAtAction(nameof(RecuperaFilmePorId), new { Id = filme.Id }, filme);//indica local(location) de criação
         }
 
         [HttpGet]
@@ -36,10 +36,27 @@ namespace FilmesApi.Controllers
 
             Filme filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
 
-            if(filme != null) {
+            if (filme != null) {
                 return Ok(filme);
             }
             return NotFound();//devolve mensagem mais clara para o usuário
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult AtualizaFilme(int id, [FromBody] Filme filmeNovo) {
+
+           Filme filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
+
+            if(filme == null) {
+                return NotFound();
+            }
+            filme.Titulo = filmeNovo.Titulo;
+            filme.Genero = filmeNovo.Genero;
+            filme.Duracao = filmeNovo.Duracao;
+            filme.Diretor = filmeNovo.Diretor;
+
+            _context.SaveChanges();
+            return NoContent();
         }
     }
 }
